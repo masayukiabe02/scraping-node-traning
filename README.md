@@ -45,5 +45,9 @@ mkdir -p $HOME/Projects/eversense-develop/synced
 cd $HOME/Projects/eversense-develop/synced
 # gitをクローンする
 git clone https://github.com/masayukiabe02/scraping-node-traning.git
+# dockerを立ち上げる
+docker-compose up -d
+# nodeの環境にログインする
+docker-compose exec app bash --login
 ```
 
