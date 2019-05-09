@@ -16,15 +16,8 @@ RUN apt-get update && apt-get install -y \
 
 #COPY dockerfiles/nuxtjs/files/etc/profile.d/common.sh /etc/profile.d/common.sh
 
-WORKDIR /app/traning-scraping
-
-
-ENV NODE_PATH /app/traning-scraping/node_modules/
-RUN npm install \
- && npm rebuild node-sass \
- && rm -rf package*
+ENV APP_ROOT_DIR /app
+WORKDIR $APP_ROOT_DIR
 
 ENV HOST 0.0.0.0
-COPY . .
-
-EXPOSE 3000
+COPY . $APP_ROOT_DIR
